@@ -6,11 +6,9 @@ package model;
 
 /**
  *
- * @author aldoc
+ * @author aldo.camera
  */
-public class Pet {
-    int id, age;
-    String name, species, breed, color, healthHistory;
-    boolean status;
-    
+public class Person {
+    int id, phoneNumber;
+    String name, address, email;
 }
