@@ -9,6 +9,6 @@ package model;
  * @author aldo.camera
  */
 public class Person {
-    int id, phoneNumber;
-    String name, address, email;
+    private int id, phoneNumber;
+    private String name, address, email;
 }
