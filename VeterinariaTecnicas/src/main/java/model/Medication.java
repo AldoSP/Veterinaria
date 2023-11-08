@@ -4,12 +4,17 @@
  */
 package model;
 
-import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
  * @author aldoc
  */
-public class Owner {
-    private ArrayList<Pet> petList = new ArrayList<>();
+public class Medication {
+    private String name;
+    private double dosage;
+    private Date startDate;
+    private Date endDate;
+    private String notes;
+    // Other attributes and methods
 }

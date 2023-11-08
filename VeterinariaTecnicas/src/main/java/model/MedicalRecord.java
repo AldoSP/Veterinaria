@@ -4,11 +4,14 @@
  */
 package model;
 
+import java.util.List;
+
 /**
  *
- * @author aldo.camera
+ * @author aldoc
  */
-public class Vet extends Person{
-    private String specialty;
-    private int licenseNumber;
+public class MedicalRecord { // A medical record is made of MedicalEvents for one Pet
+    private Pet pet;
+    private List<MedicalEvent> events;
+    // Other attributes and methods
 }
