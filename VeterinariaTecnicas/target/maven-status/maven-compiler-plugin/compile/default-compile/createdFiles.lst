@@ -1,0 +1,9 @@
+model\MedicalEvent.class
+udea\aldo\veterinariatecnicas\VeterinariaTecnicas.class
+model\Pet.class
+model\Vet.class
+model\MedicalRecord.class
+model\Owner.class
+udea\aldo\veterinariatecnicas\CConection.class
+model\Person.class
+model\Medication.class
