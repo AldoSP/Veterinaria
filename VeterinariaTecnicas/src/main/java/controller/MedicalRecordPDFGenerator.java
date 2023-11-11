@@ -28,18 +28,19 @@ public class MedicalRecordPDFGenerator {
             document.open();
 
             // Add content to the PDF from the MedicalRecord object
-            document.add(new Paragraph("Medical Record of " + medicalRecord.getPet().getName()));
+            document.add(new Paragraph("Historia Medica de: " + medicalRecord.getPet().getName()));
+            document.add(new Paragraph("\n"));
 
             for (MedicalEvent event : medicalRecord.getEvents()) {
-                document.add(new Paragraph("Date: " + event.getDate()));
-                document.add(new Paragraph("Description: " + event.getDescription()));
-                document.add(new Paragraph("Vet: " + event.getVet().getName()));
+                document.add(new Paragraph("Fecha: " + event.getDate()));
+                document.add(new Paragraph("Descripción: " + event.getDescription()));
+                document.add(new Paragraph("Veterinario: " + event.getVet().getName()));
                 // Iterate through medications within the event
                 for (Medication medication : event.getMedicationList()) {
-                    document.add(new Paragraph("Medication: " + medication.getName()));
-                    document.add(new Paragraph("Dosage: " + medication.getDosage()));
-                    document.add(new Paragraph("Start Date: " + medication.getStartDate() + "End Date: " + medication.getEndDate()));
-                    document.add(new Paragraph("Notes: "));
+                    document.add(new Paragraph("Medicamento: " + medication.getName()));
+                    document.add(new Paragraph("Dosis: " + medication.getDosage()));
+                    document.add(new Paragraph("Fecha de Inicio: " + medication.getStartDate() + " Fecha de Finalización: " + medication.getEndDate()));
+                    document.add(new Paragraph("Notas: "));
                 }
                 document.add(new Paragraph("------------------------------"));
             }
@@ -50,3 +51,13 @@ public class MedicalRecordPDFGenerator {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+

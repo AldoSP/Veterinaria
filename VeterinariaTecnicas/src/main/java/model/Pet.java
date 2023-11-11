@@ -17,6 +17,24 @@ public class Pet {
     private boolean status;
     private Owner owner;
 
+    
+    //Constructor is used when there is no pre existing MedicalRecord
+    public Pet(int id, int age, String name, String species, String breed, String color, double weight, double height, boolean status, Owner owner) {
+        this.id = id;
+        this.age = age;
+        this.name = name;
+        this.species = species;
+        this.breed = breed;
+        this.color = color;
+        this.weight = weight;
+        this.height = height;
+        this.status = status;
+        this.owner = owner;
+    }
+
+    
+    
+    //Constructor is used when there is an already existing MedicalRecord
     public Pet(int id, int age, String name, String species, String breed, String color, double weight, double height, MedicalRecord medicalRecord, boolean status, Owner owner) {
         this.id = id;
         this.age = age;

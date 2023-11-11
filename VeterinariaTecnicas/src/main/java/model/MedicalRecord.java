@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,6 +18,7 @@ public class MedicalRecord { // A medical record is made of MedicalEvents for on
 
     public MedicalRecord(Pet pet) {
         this.pet = pet;
+        this.events = new ArrayList<>();
     }
 
     public void addMedicalEvent(MedicalRecord record, MedicalEvent event) {

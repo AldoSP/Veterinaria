@@ -1,4 +1,3 @@
-controller\MedicalRecordController.class
 model\Owner.class
 model\Person.class
 model\Medication.class
@@ -9,5 +8,6 @@ model\Pet.class
 model\Vet.class
 model\MedicalRecord.class
 udea\aldo\veterinariatecnicas\CConection.class
+udea\aldo\veterinariatecnicas\TestMedicalRecordPDFGenerator.class
 controller\MedicalRecordPDFGenerator.class
 controller\FileIOController.class
