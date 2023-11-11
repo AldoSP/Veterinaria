@@ -10,11 +10,12 @@ import java.util.ArrayList;
  *
  * @author aldoc
  */
-public class Owner {
+public class Owner extends Person {
 
     private ArrayList<Pet> petList = new ArrayList<>();
 
-    public Owner() {
+    public Owner(int id, int phoneNumber, String name, String address, String email) {
+        super(id, phoneNumber, name, address, email);
     }
 
     public ArrayList<Pet> getPetList() {

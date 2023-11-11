@@ -17,7 +17,6 @@ public class Medication {
     private Date startDate;
     private Date endDate;
     private String notes;
-    // Other attributes and methods
 
     public Medication(String name, double dosage, Date startDate, Date endDate, String notes) {
         this.name = name;

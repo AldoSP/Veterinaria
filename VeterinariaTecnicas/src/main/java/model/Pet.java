@@ -12,7 +12,7 @@ public class Pet {
 
     private int id, age;
     private String name, species, breed, color;
-    private double weight, height; // Adding weight and height
+    private double weight, height; 
     private MedicalRecord medicalRecord; // Reference to the pet's medical history
     private boolean status;
     private Owner owner;

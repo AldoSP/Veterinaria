@@ -14,7 +14,6 @@ public class MedicalRecord { // A medical record is made of MedicalEvents for on
 
     private Pet pet;
     private List<MedicalEvent> events;
-    // Other attributes and methods
 
     public MedicalRecord(Pet pet) {
         this.pet = pet;
