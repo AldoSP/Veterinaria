@@ -39,7 +39,8 @@ public class MedicalRecordPDFGenerator {
                 for (Medication medication : event.getMedicationList()) {
                     document.add(new Paragraph("Medicamento: " + medication.getName()));
                     document.add(new Paragraph("Dosis: " + medication.getDosage()));
-                    document.add(new Paragraph("Fecha de Inicio: " + medication.getStartDate() + " Fecha de Finalización: " + medication.getEndDate()));
+                    document.add(new Paragraph("Fecha de Inicio: " + medication.getStartDate()));
+                    document.add(new Paragraph(" Fecha de Finalización: " + medication.getEndDate()));
                     document.add(new Paragraph("Notas: "));
                 }
                 document.add(new Paragraph("------------------------------"));
