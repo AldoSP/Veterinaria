@@ -12,4 +12,15 @@ import java.util.ArrayList;
  */
 public class Owner {
     private ArrayList<Pet> petList = new ArrayList<>();
+
+    public Owner() {
+    }
+
+    public ArrayList<Pet> getPetList() {
+        return petList;
+    }
+
+    public void setPetList(ArrayList<Pet> petList) {
+        this.petList = petList;
+    }
 }
