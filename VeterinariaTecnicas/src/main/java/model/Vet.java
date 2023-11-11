@@ -8,7 +8,8 @@ package model;
  *
  * @author aldo.camera
  */
-public class Vet extends Person{
+public class Vet extends Person {
+
     private String specialty;
     private int licenseNumber;
 
@@ -17,8 +18,6 @@ public class Vet extends Person{
         this.specialty = specialty;
         this.licenseNumber = licenseNumber;
     }
-    
-    
 
     public String getSpecialty() {
         return specialty;

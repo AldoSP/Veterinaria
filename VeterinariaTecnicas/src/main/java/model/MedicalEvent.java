@@ -12,6 +12,7 @@ import java.util.Date;
  * @author aldoc
  */
 public class MedicalEvent {
+
     private Date date; //The date in which the MedicalEvent took place
     private String description; //Description of what happened
     private Vet vet; //The vet that helped the pet.
@@ -23,7 +24,6 @@ public class MedicalEvent {
         this.vet = vet;
     }
 
-    
     public void addMedication(Medication medication) {
         medicationList.add(medication);
     }
@@ -31,7 +31,7 @@ public class MedicalEvent {
     public void removeMedication(Medication medication) {
         medicationList.remove(medication);
     }
-    
+
     //Getters & Setters
     public ArrayList<Medication> getMedicationList() {
         return medicationList;

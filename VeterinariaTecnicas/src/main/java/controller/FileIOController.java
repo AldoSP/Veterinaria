@@ -15,6 +15,7 @@ import java.io.Reader;
  * @author aldoc
  */
 public class FileIOController {
+
     private Gson gson = new Gson();
 
     public void writeToJSONFile(Object data, String fileName) {
@@ -24,7 +25,7 @@ public class FileIOController {
             e.printStackTrace();
         }
     }
-    
+
     public <T> T readFromJSONFile(String fileName, Class<T> dataType) {
         try (Reader reader = new FileReader(fileName)) {
             return gson.fromJson(reader, dataType);

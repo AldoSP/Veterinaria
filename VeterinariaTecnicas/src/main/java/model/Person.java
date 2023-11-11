@@ -9,6 +9,7 @@ package model;
  * @author aldo.camera
  */
 public class Person {
+
     private int id, phoneNumber;
     private String name, address, email;
 
@@ -20,9 +21,6 @@ public class Person {
         this.email = email;
     }
 
-    
-    
-    
     // Getters and Setters
     public int getId() {
         return id;

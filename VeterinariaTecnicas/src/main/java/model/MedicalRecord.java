@@ -11,6 +11,7 @@ import java.util.List;
  * @author aldoc
  */
 public class MedicalRecord { // A medical record is made of MedicalEvents for one Pet
+
     private Pet pet;
     private List<MedicalEvent> events;
     // Other attributes and methods
@@ -18,13 +19,12 @@ public class MedicalRecord { // A medical record is made of MedicalEvents for on
     public MedicalRecord(Pet pet) {
         this.pet = pet;
     }
-    
+
     public void addMedicalEvent(MedicalRecord record, MedicalEvent event) {
         record.getEvents().add(event);
     }
-    
     //Getters & Setters
-    
+
     public Pet getPet() {
         return pet;
     }

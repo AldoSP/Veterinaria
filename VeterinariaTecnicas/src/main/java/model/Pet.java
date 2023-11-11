@@ -9,6 +9,7 @@ package model;
  * @author aldoc
  */
 public class Pet {
+
     private int id, age;
     private String name, species, breed, color;
     private double weight, height; // Adding weight and height
@@ -30,9 +31,7 @@ public class Pet {
         this.owner = owner;
     }
 
-    
     // Getters and setters 
-
     public int getId() {
         return id;
     }

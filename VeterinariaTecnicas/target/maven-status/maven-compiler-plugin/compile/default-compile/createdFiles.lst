@@ -1,0 +1,13 @@
+controller\MedicalRecordController.class
+model\Owner.class
+model\Person.class
+model\Medication.class
+model\MedicalEvent.class
+udea\aldo\veterinariatecnicas\TestIOController.class
+udea\aldo\veterinariatecnicas\VeterinariaTecnicas.class
+model\Pet.class
+model\Vet.class
+model\MedicalRecord.class
+udea\aldo\veterinariatecnicas\CConection.class
+controller\MedicalRecordPDFGenerator.class
+controller\FileIOController.class

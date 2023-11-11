@@ -11,6 +11,7 @@ import java.util.Date;
  * @author aldoc
  */
 public class Medication {
+
     private String name;
     private double dosage;
     private Date startDate;
