@@ -357,8 +357,16 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="numDocPro">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numDocProActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="numDocProKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="numPhoneCont">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numPhoneContActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="numPhoneContKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="namePet">
         </Component>
@@ -392,14 +400,24 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="consultationCost">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="consultationCostKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="extraExpenses">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="extraExpensesKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="pay">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="payKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="remainingValue">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="remainingValueActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="remainingValueKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton1">
@@ -534,8 +552,14 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="age">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="ageKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="weight">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="weightKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel19">
           <Properties>

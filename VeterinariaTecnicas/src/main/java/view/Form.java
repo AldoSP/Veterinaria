@@ -6,7 +6,6 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author antivirus
@@ -156,6 +155,28 @@ public class Form extends javax.swing.JFrame {
 
         name.setText(" ");
 
+        numDocPro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numDocProActionPerformed(evt);
+            }
+        });
+        numDocPro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                numDocProKeyTyped(evt);
+            }
+        });
+
+        numPhoneCont.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numPhoneContActionPerformed(evt);
+            }
+        });
+        numPhoneCont.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                numPhoneContKeyTyped(evt);
+            }
+        });
+
         observations.setColumns(20);
         observations.setRows(5);
         jScrollPane1.setViewportView(observations);
@@ -164,9 +185,32 @@ public class Form extends javax.swing.JFrame {
 
         jLabel15.setText("Paga / Abona:");
 
+        consultationCost.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                consultationCostKeyTyped(evt);
+            }
+        });
+
+        extraExpenses.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                extraExpensesKeyTyped(evt);
+            }
+        });
+
+        pay.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                payKeyTyped(evt);
+            }
+        });
+
         remainingValue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 remainingValueActionPerformed(evt);
+            }
+        });
+        remainingValue.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                remainingValueKeyTyped(evt);
             }
         });
 
@@ -246,6 +290,18 @@ public class Form extends javax.swing.JFrame {
         );
 
         jLabel18.setText("Edad:");
+
+        age.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ageKeyTyped(evt);
+            }
+        });
+
+        weight.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                weightKeyTyped(evt);
+            }
+        });
 
         jLabel19.setText("Peso:");
 
@@ -422,27 +478,25 @@ public class Form extends javax.swing.JFrame {
         String costosExtras = extraExpenses.getText();
         String paga = pay.getText();
         String valorRestante = remainingValue.getText();
-        if (
-            nombre.isEmpty() || 
-            cedula.isEmpty() || 
-            celular.isEmpty() ||
-            nombreMascota.isEmpty() ||
-            raza.isEmpty() ||
-            edad.isEmpty() ||
-            peso.isEmpty() ||
-            (!dog.isSelected() && !cat.isSelected()) ||
-            paga.isEmpty()||
-            motivoConsulta.isEmpty() ||
-            obsevaciones.isEmpty() ||
-            precioConsulta.isEmpty() ||
-            costosExtras.isEmpty() ||
-            valorRestante.isEmpty()) {
+        if (nombre.isEmpty()
+                || cedula.isEmpty()
+                || celular.isEmpty()
+                || nombreMascota.isEmpty()
+                || raza.isEmpty()
+                || edad.isEmpty()
+                || peso.isEmpty()
+                || (!dog.isSelected() && !cat.isSelected())
+                || paga.isEmpty()
+                || motivoConsulta.isEmpty()
+                || obsevaciones.isEmpty()
+                || precioConsulta.isEmpty()
+                || costosExtras.isEmpty()
+                || valorRestante.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Llene todos los campos del formulario.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+        } else {
             //Agreguen la logica o metodos que envian los datos a la tabla de la base de datos aquí por fa
-            
-            JOptionPane.showMessageDialog(null,"Historia clinica guardada bajo el id #" + id);
+
+            JOptionPane.showMessageDialog(null, "Historia clinica guardada bajo el id #" + id);
             idNum.setText("");
             name.setText("");
             numDocPro.setText("");
@@ -464,14 +518,14 @@ public class Form extends javax.swing.JFrame {
 
     private void dogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dogActionPerformed
         // TODO add your handling code here:
-        if (dog.isSelected()){
+        if (dog.isSelected()) {
             cat.setSelected(false);
         }
     }//GEN-LAST:event_dogActionPerformed
 
     private void catActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_catActionPerformed
         // TODO add your handling code here:
-        if (cat.isSelected()){
+        if (cat.isSelected()) {
             dog.setSelected(false);
         }
     }//GEN-LAST:event_catActionPerformed
@@ -479,6 +533,80 @@ public class Form extends javax.swing.JFrame {
     private void remainingValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remainingValueActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_remainingValueActionPerformed
+
+    private void numDocProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numDocProActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_numDocProActionPerformed
+
+    private void numPhoneContActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numPhoneContActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numPhoneContActionPerformed
+
+    private void numPhoneContKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numPhoneContKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume();
+
+        }
+// TODO add your handling code here:
+    }//GEN-LAST:event_numPhoneContKeyTyped
+
+    private void numDocProKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numDocProKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume();
+
+        }            // TODO add your handling code here:
+    }//GEN-LAST:event_numDocProKeyTyped
+
+    private void ageKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ageKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume();
+
+        }            // TODO add your handling code here:
+    }//GEN-LAST:event_ageKeyTyped
+
+    private void weightKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_weightKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume();
+
+        }            // TODO add your handling code here:
+    }//GEN-LAST:event_weightKeyTyped
+
+    private void consultationCostKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_consultationCostKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume();
+
+        }            // TODO add your handling code here:
+    }//GEN-LAST:event_consultationCostKeyTyped
+
+    private void extraExpensesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_extraExpensesKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume();
+
+        }            // TODO add your handling code here:
+    }//GEN-LAST:event_extraExpensesKeyTyped
+
+    private void payKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_payKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume();
+
+        }            // TODO add your handling code here:
+    }//GEN-LAST:event_payKeyTyped
+
+    private void remainingValueKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_remainingValueKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume();
+
+        }            // TODO add your handling code here:
+    }//GEN-LAST:event_remainingValueKeyTyped
 
     /**
      * @param args the command line arguments
