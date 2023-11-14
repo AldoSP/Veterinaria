@@ -1,1 +1,2 @@
-create database veterinariajava;
+use veterinariajava;
+

@@ -13,5 +13,13 @@ public class VeterinariaTecnicas {
         System.out.println("Hello World!");
         CConection objetoConexion = new CConection();
         objetoConexion.estableceConexion();
+        objetoConexion.insertarMascota(); // Inserta una mascota
+
+        // Insertar un veterinario
+        objetoConexion.insertarVeterinario();
+
+        // Consultar las mascotas existentes
+        System.out.println("Mascotas actuales en la base de datos:");
+        objetoConexion.consultarPet();
     }
 }
