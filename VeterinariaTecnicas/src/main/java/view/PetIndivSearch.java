@@ -1,8 +1,14 @@
 package view;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import config.Conexion;
 import controller.MedicalRecordPDFGenerator;
 import controller.ShowDB;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -10,6 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import model.MedicalEvent;
 
 
 /*
@@ -622,6 +629,31 @@ public class PetIndivSearch extends javax.swing.JFrame {
         MedicalRecordPDFGenerator.generatePDF(medicalEvent, fileName);
         
          */
+        Document document = new Document();
+
+        try {
+            PdfWriter.getInstance(document, new FileOutputStream("pdf.pdf"));
+            document.open();
+
+            // Add content to the PDF from the MedicalRecord object
+            document.add(new Paragraph("Historia Medica de: " + getNamePet().getText()));
+            document.add(new Paragraph("ID de Historia: " + getIdNum().getText()));
+            document.add(new Paragraph("\n"));
+
+            document.add(new Paragraph("Edad: " + getAge().getText()));
+            document.add(new Paragraph("Peso: " + getWeight().getText()));
+
+            document.add(new Paragraph("Precio Consulta: " + getConsultationCost().getText()));
+            document.add(new Paragraph("Gastos Adicionales: " + getExtraExpenses().getText()));
+            document.add(new Paragraph("Monto Abonado: " + getPay().getText()));
+            document.add(new Paragraph("Valor restante a pagar: " + getValorRestante().getText()));
+
+            document.add(new Paragraph("------------------------------"));
+
+            document.close();
+        } catch (DocumentException | FileNotFoundException e) {
+            e.printStackTrace();
+        }
         
     }//GEN-LAST:event_BtnPdfsActionPerformed
 

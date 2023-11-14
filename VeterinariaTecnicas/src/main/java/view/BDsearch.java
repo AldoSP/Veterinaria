@@ -4,7 +4,13 @@
  */
 package view;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import controller.ShowDB;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -314,6 +320,25 @@ public class BDsearch extends javax.swing.JFrame {
         MedicalRecordPDFGenerator.generatePDF(medicalEvent, fileName);
         
         */
+     Document document = new Document();   
+     try {
+            PdfWriter.getInstance(document, new FileOutputStream("pdftabla.pdf"));
+            document.open();
+
+            // Add content to the PDF from the MedicalRecord object
+            document.add(new Paragraph(getCedula().getText()));
+            document.add(new Paragraph(getNameAcompañante().getText()));
+            document.add(new Paragraph(getNumDocPro().getText()));
+            document.add(new Paragraph(getNumPhoneCont().getText()));
+            document.add(new Paragraph(getDireccion().getText()));
+
+            document.add(new Paragraph("------------------------------"));
+
+            document.close();
+        } catch (DocumentException | FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        
         
     }//GEN-LAST:event_BtnPdfsActionPerformed
 

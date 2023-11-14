@@ -9,11 +9,9 @@ view\Menu$1.class
 controller\ShowDB.class
 view\BDsearch.class
 view\BDsearch$2.class
-udea\aldo\veterinariatecnicas\VeterinariaTecnicas.class
 view\Form$10.class
 view\SearchMenu$1.class
 view\Form$9.class
-udea\aldo\veterinariatecnicas\CConection.class
 view\BDsearch$5.class
 view\PetIndivSearch$14.class
 view\PetIndivSearch$5.class
@@ -50,7 +48,6 @@ view\BDview.class
 view\Form$4.class
 view\BDsearch$7.class
 model\Vet.class
-udea\aldo\veterinariatecnicas\TestMedicalRecordPDFGenerator.class
 view\SearchMenu$2.class
 view\Form$11.class
 view\Form$2.class
@@ -63,6 +60,7 @@ controller\InsertToBD.class
 view\Form$14.class
 view\PetIndivSearch$4.class
 view\Form$8.class
+model\Conexion.class
 view\BDview$3.class
 view\Form$5.class
 controller\MedicalRecordPDFGenerator.class
