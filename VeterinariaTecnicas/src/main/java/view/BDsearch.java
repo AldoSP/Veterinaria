@@ -304,7 +304,17 @@ public class BDsearch extends javax.swing.JFrame {
     }//GEN-LAST:event_numDocProKeyTyped
 
     private void BtnPdfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPdfsActionPerformed
-       // Aquí el metodo para generar los pdfs:
+    // Aquí el metodo para generar los pdfs:
+        /*SOLO HAY QUE USAR ESTE METODO, PERO PRIMERO DEBES CONSTRUIR
+        UN OBJETO DEL TIPO MEDICAL RECORD QUE CONTENGA TODOS LOS MEDICAL EVENTS
+        PARA CREARLO DEBES SACAR LOS ATRIBUTOS DE LA DATABASE Y USAR LOS
+        CONSTRUCTORES. SI EL OBJETO SE LLAMA medicalRecord ENTONCES EL PDF
+        SE GENERARÁ AUTOMATICAMENTE EN LA RAIZ DEL PROYECTO SIN NINGÚN PROBLEMA
+        FUNCIONA IGUAL CON LOS JSON.
+        MedicalRecordPDFGenerator.generatePDF(medicalEvent, fileName);
+        
+        */
+        
     }//GEN-LAST:event_BtnPdfsActionPerformed
 
     private void BntBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BntBuscar1ActionPerformed

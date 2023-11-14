@@ -13,8 +13,10 @@ import java.util.Date;
  */
 public class MedicalEvent {
 
+    private int eventID;
+    private Pet pet;
     private Date date; //The date in which the MedicalEvent took place
-    private String description; //Description of what happened
+    private String description, notes; //Description of what happened
     private Vet vet; //The vet that helped the pet.
     private int consultationCost, extraExpenses, paidAmount;
     private ArrayList<Medication> medicationList = new ArrayList<>();
@@ -25,13 +27,15 @@ public class MedicalEvent {
         this.vet = vet;
     }
 
-    public MedicalEvent(String description, int consultationCost, int extraExpenses, int paidAmount) {
+    public MedicalEvent(int eventID, Pet pet, String description, String notes, int consultationCost, int extraExpenses, int paidAmount) {
+        this.eventID = eventID;
+        this.pet = pet;
         this.description = description;
+        this.notes = notes;
         this.consultationCost = consultationCost;
         this.extraExpenses = extraExpenses;
         this.paidAmount = paidAmount;
     }
-    
 
     public void addMedication(Medication medication) {
         medicationList.add(medication);

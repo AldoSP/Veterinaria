@@ -1,6 +1,7 @@
 package view;
 
 import config.Conexion;
+import controller.MedicalRecordPDFGenerator;
 import controller.ShowDB;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -15,7 +16,6 @@ import javax.swing.JTextField;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author antivirus (Juanma)
@@ -29,11 +29,11 @@ public class PetIndivSearch extends javax.swing.JFrame {
     Connection conet;
     Statement st;
     ResultSet rs;
-    
+
     public PetIndivSearch() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
+
     }
 
     /**
@@ -520,7 +520,7 @@ public class PetIndivSearch extends javax.swing.JFrame {
         SearchMenu ventana4 = new SearchMenu();
         ventana4.setVisible(true);
         this.setVisible(false);
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
@@ -531,14 +531,14 @@ public class PetIndivSearch extends javax.swing.JFrame {
 
     private void dogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dogActionPerformed
         // TODO add your handling code here:
-        if (dog.isSelected()){
+        if (dog.isSelected()) {
             cat.setSelected(false);
         }
     }//GEN-LAST:event_dogActionPerformed
 
     private void catActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_catActionPerformed
         // TODO add your handling code here:
-        if (cat.isSelected()){
+        if (cat.isSelected()) {
             dog.setSelected(false);
         }
     }//GEN-LAST:event_catActionPerformed
@@ -550,7 +550,7 @@ public class PetIndivSearch extends javax.swing.JFrame {
     private void numDocProKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numDocProKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        if(!Character.isDigit(c)){
+        if (!Character.isDigit(c)) {
             evt.consume();
         }
     }//GEN-LAST:event_numDocProKeyTyped
@@ -562,7 +562,7 @@ public class PetIndivSearch extends javax.swing.JFrame {
     private void numPhoneContKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numPhoneContKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        if(!Character.isDigit(c)){
+        if (!Character.isDigit(c)) {
             evt.consume();
         }
     }//GEN-LAST:event_numPhoneContKeyTyped
@@ -570,7 +570,7 @@ public class PetIndivSearch extends javax.swing.JFrame {
     private void ageKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ageKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        if(!Character.isDigit(c)){
+        if (!Character.isDigit(c)) {
             evt.consume();
         }
     }//GEN-LAST:event_ageKeyTyped
@@ -578,7 +578,7 @@ public class PetIndivSearch extends javax.swing.JFrame {
     private void weightKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_weightKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        if(!Character.isDigit(c)){
+        if (!Character.isDigit(c)) {
             evt.consume();
         }
     }//GEN-LAST:event_weightKeyTyped
@@ -586,7 +586,7 @@ public class PetIndivSearch extends javax.swing.JFrame {
     private void consultationCostKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_consultationCostKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        if(!Character.isDigit(c)){
+        if (!Character.isDigit(c)) {
             evt.consume();
         }
     }//GEN-LAST:event_consultationCostKeyTyped
@@ -594,7 +594,7 @@ public class PetIndivSearch extends javax.swing.JFrame {
     private void extraExpensesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_extraExpensesKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        if(!Character.isDigit(c)){
+        if (!Character.isDigit(c)) {
             evt.consume();
         }
     }//GEN-LAST:event_extraExpensesKeyTyped
@@ -602,7 +602,7 @@ public class PetIndivSearch extends javax.swing.JFrame {
     private void payKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_payKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        if(!Character.isDigit(c)){
+        if (!Character.isDigit(c)) {
             evt.consume();
         }
     }//GEN-LAST:event_payKeyTyped
@@ -613,6 +613,16 @@ public class PetIndivSearch extends javax.swing.JFrame {
 
     private void BtnPdfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPdfsActionPerformed
         // Aquí el metodo para generar los pdfs:
+        /*SOLO HAY QUE USAR ESTE METODO, PERO PRIMERO DEBES CONSTRUIR
+        UN OBJETO DEL TIPO MEDICAL RECORD QUE CONTENGA TODOS LOS MEDICAL EVENTS
+        PARA CREARLO DEBES SACAR LOS ATRIBUTOS DE LA DATABASE Y USAR LOS
+        CONSTRUCTORES. SI EL OBJETO SE LLAMA medicalRecord ENTONCES EL PDF
+        SE GENERARÁ AUTOMATICAMENTE EN LA RAIZ DEL PROYECTO SIN NINGÚN PROBLEMA
+        FUNCIONA IGUAL CON LOS JSON.
+        MedicalRecordPDFGenerator.generatePDF(medicalEvent, fileName);
+        
+         */
+        
     }//GEN-LAST:event_BtnPdfsActionPerformed
 
     /**
@@ -656,61 +666,72 @@ public class PetIndivSearch extends javax.swing.JFrame {
             }
         });
     }
-    
-    public JTextField getIdNum(){
+
+    public JTextField getIdNum() {
         return idNum;
     }
-    
-    public JTextField getNameAcompañante(){
+
+    public JTextField getNameAcompañante() {
         return name;
     }
-    public JTextField getNumDocPro(){
+
+    public JTextField getNumDocPro() {
         return numDocPro;
     }
-    public JTextField getNumPhoneCont(){
+
+    public JTextField getNumPhoneCont() {
         return numPhoneCont;
     }
-    public JTextField getDireccion(){
+
+    public JTextField getDireccion() {
         return direccion;
     }
-    
-     public JTextField getNamePet(){
+
+    public JTextField getNamePet() {
         return namePet;
     }
-     
+
     public JRadioButton getDog() {
         return dog;
     }
-    
+
     public JRadioButton getCat() {
         return cat;
     }
-    
-    public JTextField getBreed(){
+
+    public JTextField getBreed() {
         return breed;
     }
-    public JTextField getAge(){
+
+    public JTextField getAge() {
         return age;
     }
-    public JTextField getWeight(){
+
+    public JTextField getWeight() {
         return weight;
     }
-    public JTextField getReasonCon(){
+
+    public JTextField getReasonCon() {
         return reasonCon;
     }
-    public JTextArea getObservations(){
+
+    public JTextArea getObservations() {
         return observations;
     }
-    public JTextField getConsultationCost(){
+
+    public JTextField getConsultationCost() {
         return consultationCost;
     }
-    public JTextField getExtraExpenses(){
+
+    public JTextField getExtraExpenses() {
         return extraExpenses;
     }
-    public JTextField getPay(){
+
+    public JTextField getPay() {
         return pay;
     }
-    public JTextField getValorRestante(){
+
+    public JTextField getValorRestante() {
         return ValorRestante;
     }
 

@@ -16,11 +16,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import model.MedicalEvent;
 import model.MedicalRecord;
-import model.Medication;
 
 public class MedicalRecordPDFGenerator {
 
-    public static void generatePDF(MedicalRecord medicalRecord, String fileName) {
+    public static void generatePDF(MedicalEvent medicalEvent, String fileName) {
         Document document = new Document();
 
         try {
@@ -28,21 +27,20 @@ public class MedicalRecordPDFGenerator {
             document.open();
 
             // Add content to the PDF from the MedicalRecord object
-            document.add(new Paragraph("Historia Medica de: " + medicalRecord.getPet().getName()));
+            document.add(new Paragraph("Historia Medica de: " + medicalEvent.getPet().getName()));
+            document.add(new Paragraph("ID de Historia: " + medicalEvent.getEventID()));
             document.add(new Paragraph("\n"));
 
-            for (MedicalEvent event : medicalRecord.getEvents()) {
-                document.add(new Paragraph("Descripción: " + event.getDescription()));
-                document.add(new Paragraph("Edad: " + medicalRecord.getPet().getAge()));
-                document.add(new Paragraph("Peso: " + medicalRecord.getPet().getWeight()));
-                document.add(new Paragraph("Altura: " + medicalRecord.getPet().getHeight()));
+            document.add(new Paragraph("Descripción: " + medicalEvent.getDescription()));
+            document.add(new Paragraph("Edad: " + medicalEvent.getPet().getAge()));
+            document.add(new Paragraph("Peso: " + medicalEvent.getPet().getWeight()));
+            document.add(new Paragraph("Altura: " + medicalEvent.getPet().getHeight()));
 
-                document.add(new Paragraph("Precio Consulta: " + event.getConsultationCost()));
-                document.add(new Paragraph("Precio Consulta: " + event.getExtraExpenses()));
-                document.add(new Paragraph("Precio Consulta: " + event.getPaidAmount()));
+            document.add(new Paragraph("Precio Consulta: " + medicalEvent.getConsultationCost()));
+            document.add(new Paragraph("Gastos Adicionales: " + medicalEvent.getExtraExpenses()));
+            document.add(new Paragraph("Monto Pagado: " + medicalEvent.getPaidAmount()));
 
-                document.add(new Paragraph("------------------------------"));
-            }
+            document.add(new Paragraph("------------------------------"));
 
             document.close();
         } catch (DocumentException | FileNotFoundException e) {
