@@ -32,17 +32,15 @@ public class MedicalRecordPDFGenerator {
             document.add(new Paragraph("\n"));
 
             for (MedicalEvent event : medicalRecord.getEvents()) {
-                document.add(new Paragraph("Fecha: " + event.getDate()));
                 document.add(new Paragraph("Descripción: " + event.getDescription()));
-                document.add(new Paragraph("Veterinario: " + event.getVet().getName()));
-                // Iterate through medications within the event
-                for (Medication medication : event.getMedicationList()) {
-                    document.add(new Paragraph("Medicamento: " + medication.getName()));
-                    document.add(new Paragraph("Dosis: " + medication.getDosage()));
-                    document.add(new Paragraph("Fecha de Inicio: " + medication.getStartDate()));
-                    document.add(new Paragraph(" Fecha de Finalización: " + medication.getEndDate()));
-                    document.add(new Paragraph("Notas: "));
-                }
+                document.add(new Paragraph("Edad: " + medicalRecord.getPet().getAge()));
+                document.add(new Paragraph("Peso: " + medicalRecord.getPet().getWeight()));
+                document.add(new Paragraph("Altura: " + medicalRecord.getPet().getHeight()));
+
+                document.add(new Paragraph("Precio Consulta: " + event.getConsultationCost()));
+                document.add(new Paragraph("Precio Consulta: " + event.getExtraExpenses()));
+                document.add(new Paragraph("Precio Consulta: " + event.getPaidAmount()));
+
                 document.add(new Paragraph("------------------------------"));
             }
 
@@ -52,13 +50,3 @@ public class MedicalRecordPDFGenerator {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-

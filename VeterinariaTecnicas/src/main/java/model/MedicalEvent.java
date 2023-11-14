@@ -16,6 +16,7 @@ public class MedicalEvent {
     private Date date; //The date in which the MedicalEvent took place
     private String description; //Description of what happened
     private Vet vet; //The vet that helped the pet.
+    private int consultationCost, extraExpenses, paidAmount;
     private ArrayList<Medication> medicationList = new ArrayList<>();
 
     public MedicalEvent(Date date, String description, Vet vet) {
@@ -23,6 +24,14 @@ public class MedicalEvent {
         this.description = description;
         this.vet = vet;
     }
+
+    public MedicalEvent(String description, int consultationCost, int extraExpenses, int paidAmount) {
+        this.description = description;
+        this.consultationCost = consultationCost;
+        this.extraExpenses = extraExpenses;
+        this.paidAmount = paidAmount;
+    }
+    
 
     public void addMedication(Medication medication) {
         medicationList.add(medication);
@@ -64,4 +73,29 @@ public class MedicalEvent {
     public void setVet(Vet vet) {
         this.vet = vet;
     }
+
+    public int getConsultationCost() {
+        return consultationCost;
+    }
+
+    public void setConsultationCost(int consultationCost) {
+        this.consultationCost = consultationCost;
+    }
+
+    public int getExtraExpenses() {
+        return extraExpenses;
+    }
+
+    public void setExtraExpenses(int extraExpenses) {
+        this.extraExpenses = extraExpenses;
+    }
+
+    public int getPaidAmount() {
+        return paidAmount;
+    }
+
+    public void setPaidAmount(int paidAmount) {
+        this.paidAmount = paidAmount;
+    }
+    
 }
